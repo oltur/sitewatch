@@ -7,8 +7,8 @@ describe('material-dashboard-angular App', () => {
     page = new MaterialDashboardAngularPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display an app name in sidebar menu title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getMainAreaTitle()).toContain('Dashboard');
   });
 });

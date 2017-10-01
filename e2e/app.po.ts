@@ -2,10 +2,10 @@ import { browser, element, by } from 'protractor';
 
 export class MaterialDashboardAngularPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/dashboard');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getMainAreaTitle() {
+    return element(by.css('a.navbar-brand')).getText();
   }
 }
