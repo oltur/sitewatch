@@ -1,0 +1,55 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">MSM UK ABTests</h4>
+                        <p class="category">See and modify</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <div class="card-content table-responsive">
+                                    <table class="table">
+                                        <thead class="text-danger">
+                                            <tr>
+                                                <th>ABTestID</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>StartDate</th>
+                                                <th>EndDate</th>
+                                                <th>LifeTimespan</th>
+                                                <th>IsOnWebsite</th>
+                                                <th>IsOnMobile</th>
+                                                <th>IsForActiveUser</th>
+                                                <th>IsForNonActiveUser</th>
+                                                <th>LifeTimespanDescription</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let abTest of data">
+                                                <td>{{abTest.ABTestID}}</td>
+                                                <td>{{abTest.Name}}</td>
+                                                <td>{{abTest.Description}}</td>
+                                                <td>{{abTest.StartDate}}</td>
+                                                <td>{{abTest.EndDate}}</td>
+                                                <td>{{abTest.LifeTimespan}}</td>
+                                                <td>{{abTest.IsOnWebsite}}</td>
+                                                <td>{{abTest.IsOnMobile}}</td>
+                                                <td>{{abTest.IsForActiveUser}}</td>
+                                                <td>{{abTest.IsForNonActiveUser}}</td>
+                                                <td>{{abTest.LifeTimespanDescription}}</td>
+                                            </tr>
+                                         </tbody>
+                                    </table>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

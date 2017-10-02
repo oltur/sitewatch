@@ -1,0 +1,24 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">MSM UK Site Actions</h4>
+                        <p class="category">Do what you need</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div>Last metadata refresh time: {{(lastRefresh | date:'medium') || 'Never'}}</div>
+                                <button class="btn btn-danger" (click)="refreshMetadata()">Refresh the site metadata</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

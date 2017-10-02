@@ -11,9 +11,13 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { ABTestsListComponent } from 'app/abtests/abtests-list.component';
+import { ActionsListComponent } from 'app/actions/actions-list.component';
 
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
+    { path: 'abtests-list',   component: ABTestsListComponent },
+    { path: 'actions-list',   component: ActionsListComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
@@ -21,7 +25,7 @@ const routes: Routes =[
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-      { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
+    { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({
