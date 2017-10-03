@@ -12,7 +12,7 @@ export class ABTestsListComponent implements OnInit {
     private dataService: DataService
   ) { }
 
-  private data: any[];
+  public data: any[];
 
   ngOnInit() {
     this.dataService.getAllABTests().then(data2 => {
