@@ -18,7 +18,7 @@ export class ABTestsListComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getAllABTests().then(data2 => {
-      console.log(data2);
+//      console.log(data2);
       this.data = data2;
       setTimeout(() => {
         $(".for-datatables").DataTable();

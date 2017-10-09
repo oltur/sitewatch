@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">MSM UK Product Attributes</h4>
+            <p class="category">See and modify</p>
+          </div>
+          <div class="card-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card-content table-responsive">
+
+                  <table id="calcAttrTable" class="table for-datatables">
+                    <thead class="text-danger">
+                      <tr>
+                        <th>ID</th>
+                        <th>Friendly Name</th>
+                        <th>Display Name</th>
+                        <th>Kind</th>
+                        <th>Expression Type</th>
+                        <th>Value Type</th>
+                        <th>Notes</th>
+                        <th>Products</th>
+                        <th>Values</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of data">
+                        <td>{{item.CalcAttributeID}}</td>
+                        <td>{{item.FriendlyName}}</td>
+                        <td>{{item.DisplayName}}</td>
+                        <td>{{item.Kind}}</td>
+                        <td>{{item.ExpressionTypeName}}</td>
+                        <td>{{item.ValueTypeName}}</td>
+                        <td>{{item.Notes}}</td>
+                        <td>
+                          <span *ngFor="let product of item.Products">
+                            <a target="_blank" href="http://www.mysupermarket.co.uk/product/{{product}}">{{product}}</a>,
+                          </span>
+                        </td>
+                        <td>
+                          <p *ngFor="let value of item.Values">
+                            {{value.ValueFriendlyName}}, {{value.ValueDisplayName}}, {{value.Expression}}, {{value.Serial}}
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

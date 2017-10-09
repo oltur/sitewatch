@@ -12,9 +12,17 @@ export class DataService {
 
   public getAllABTests() {
     return this.http.get('http://www.mysupermarket.co.uk/api/ABTests.aspx').toPromise().then((data: any) => {
-      console.log(data);
+//      console.log(data);
       return data.data;
     });
   }
+
+  public getAllAttributes() {
+    return this.http.get('http://www.mysupermarket.co.uk/api/CalcAttribute.aspx').toPromise().then((data: any) => {
+//      console.log(data);
+      return data.data;
+    });
+  }
+
 }
 

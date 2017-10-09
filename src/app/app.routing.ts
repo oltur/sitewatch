@@ -13,10 +13,14 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { ABTestsListComponent } from 'app/abtests/abtests-list.component';
 import { ActionsListComponent } from 'app/actions/actions-list.component';
+import { CalculatedAttributesListComponent } from 'app/calculated-attributes/calculated-attributes-list.component';
+import { CategoriesListComponent } from 'app/categories/categories-list.component';
 
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'abtests-list',   component: ABTestsListComponent },
+    { path: 'calculated-attributes-list',   component: CalculatedAttributesListComponent },
+    { path: 'categories-list',   component: CategoriesListComponent },
     { path: 'actions-list',   component: ActionsListComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },

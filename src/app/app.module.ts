@@ -21,6 +21,8 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { ABTestsListComponent } from './abtests/abtests-list.component';
 import { DataService } from 'app/services/data.service';
 import { ActionsListComponent } from './actions/actions-list.component';
+import { CalculatedAttributesListComponent } from './calculated-attributes/calculated-attributes-list.component';
+import { CategoriesListComponent } from './categories/categories-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ActionsListComponent } from './actions/actions-list.component';
     NotificationsComponent,
     UpgradeComponent,
     ABTestsListComponent,
-    ActionsListComponent
+    ActionsListComponent,
+    CalculatedAttributesListComponent,
+    CategoriesListComponent
   ],
   imports: [
     BrowserModule,
