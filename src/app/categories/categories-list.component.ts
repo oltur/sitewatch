@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'app/services/data.service';
+
+declare var $: any;
 
 @Component({
   selector: 'app-categories-list',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataService: DataService
+  ) { }
+
+  public data: any[];
 
   ngOnInit() {
+    this.dataService.getChannelFolders().then(data => {
+      console.log(data);
+      this.data = data;
+      setTimeout(() => {
+        $(".for-datatables").dataTable({
+          // "columnDefs": [
+          //   { "width": "200px", "targets": 7 },
+          //   { "width": "200px", "targets": 8 }
+          // ]
+        });
+      }, 1000);
+    });
   }
 
 }

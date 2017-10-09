@@ -18,11 +18,18 @@ export class DataService {
   }
 
   public getAllAttributes() {
-    return this.http.get('http://www.mysupermarket.co.uk/api/CalcAttribute.aspx').toPromise().then((data: any) => {
+    return this.http.get('http://www.mysupermarket.co.uk/api/CalcAttributes.aspx').toPromise().then((data: any) => {
 //      console.log(data);
       return data.data;
     });
   }
 
+  public getChannelFolders() {
+    return this.http.get('http://www.mysupermarket.co.uk/api/ChannelFolders.aspx').toPromise().then((data: any) => {
+//      console.log(data);
+      return data;
+    });
+  }
+  
 }
 
