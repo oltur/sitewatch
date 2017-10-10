@@ -21,14 +21,17 @@ export class CategoriesListComponent implements OnInit {
       console.log(data);
       this.data = data;
       setTimeout(() => {
-        $(".for-datatables").dataTable({
-          // "columnDefs": [
-          //   { "width": "200px", "targets": 7 },
-          //   { "width": "200px", "targets": 8 }
-          // ]
-        });
+        $(".for-bonsai").shieldTreeView({
+          events: {
+            select: function (e) {
+              const folderId = e.element.find(".node-text").first().attr("id").substring(1);
+              console.log("selecting folder " + folderId);
+            }
+          }
+        })
       }, 1000);
     });
   }
+
 
 }

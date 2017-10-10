@@ -1,7 +1,7 @@
 <ng-template #treeNode let-node>
-  <span>{{node.Name}}</span>
+  <span class="node-text" id="n{{node.FolderID}}">{{node.text}}</span>
   <ul>
-    <li *ngFor="let child of node.Children">
+    <li *ngFor="let child of node.nodes" data-expanded="true">
       <ng-container *ngTemplateOutlet="treeNode; context: { $implicit: child }"></ng-container>
     </li>
   </ul>
@@ -19,9 +19,9 @@
           <div class="card-content">
             <div class="row">
               <div class="col-md-12">
-                <div *ngIf="data" class="card-content table-responsive">
-                  <ul>
-                    <li>
+                <div *ngIf="data" class="card-content table-responsive" style="width:500px; height: 400px; border: 1px solid;">
+                  <ul class="for-bonsai">
+                    <li data-expanded="true">
                       <ng-container *ngTemplateOutlet="treeNode; context: { $implicit: data.root }"></ng-container>
                     </li>
                   </ul>
