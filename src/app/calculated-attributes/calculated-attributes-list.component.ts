@@ -16,7 +16,10 @@ export class CalculatedAttributesListComponent implements OnInit {
 
   public data: any[];
 
+  public initComplete:boolean = false;
+  
   ngOnInit() {
+    let self = this;
     this.dataService.getAllAttributes().then(data2 => {
       //      console.log(data2);
       this.data = data2;
@@ -25,7 +28,11 @@ export class CalculatedAttributesListComponent implements OnInit {
           "columnDefs": [
             { "width": "200px", "targets": 7 },
             { "width": "200px", "targets": 8 }
-          ]
+          ],
+          "initComplete": function(settings, json) {
+            self.initComplete = true;
+          }
+          
         });
       }, 1000);
     });

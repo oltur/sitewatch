@@ -16,13 +16,20 @@ export class ABTestsListComponent implements OnInit {
 
   public data: any[];
 
+  public initComplete:boolean = false;
+
   ngOnInit() {
+    let self = this;
     this.dataService.getAllABTests().then(data2 => {
 //      console.log(data2);
       this.data = data2;
       setTimeout(() => {
-        $(".for-datatables").DataTable();
-      }, 1000);
+        $(".for-datatables").DataTable({
+          "initComplete": function(settings, json) {
+            self.initComplete = true;
+          }
+        });
+      }, 2000);
     });
   }
 
