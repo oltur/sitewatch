@@ -23,6 +23,7 @@ import { DataService } from 'app/services/data.service';
 import { ActionsListComponent } from './actions/actions-list.component';
 import { CalculatedAttributesListComponent } from './calculated-attributes/calculated-attributes-list.component';
 import { CategoriesListComponent } from './categories/categories-list.component';
+import { TreeModule } from 'angular-tree-component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CategoriesListComponent } from './categories/categories-list.component'
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TreeModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

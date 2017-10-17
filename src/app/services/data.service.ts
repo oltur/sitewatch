@@ -31,5 +31,11 @@ export class DataService {
     });
   }
   
+  public getChannelFolderProducts(folderId) {
+    return this.http.get('http://www.mysupermarket.co.uk/api/HomePageTopOffers.aspx?folderId=' + folderId).toPromise().then((data: any) => {
+//      console.log(data);
+      return data;
+    });
+  }
 }
 

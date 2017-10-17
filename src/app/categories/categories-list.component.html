@@ -18,15 +18,34 @@
           </div>
           <div class="card-content">
             <div class="row">
-              <div class="col-md-12">
-                <!-- <spinner *ngIf="!data" [tickness]="3" [size]="50" color='#ff0000'></spinner> -->
-                <div *ngIf="data" class="card-content table-responsive" style="width:500px; height: 400px; border: 1px solid;">
-                  <ul class="for-bonsai">
-                    <li data-expanded="true">
-                      <ng-container *ngTemplateOutlet="treeNode; context: { $implicit: data.root }"></ng-container>
-                    </li>
-                  </ul>
+              <!-- <spinner *ngIf="!data" [tickness]="3" [size]="50" color='#ff0000'></spinner> -->
+
+              <div class="col-md-4">
+                <div class="tree" style="height: 400px;border: 1px solid;">
+                  <tree-root [nodes]="nodes" [options]="options" (activate)="activateFolder($event)">
+                  </tree-root>
                 </div>
+              </div>
+
+              <div class="col-md-8">
+                <table class="table for-datatables" style="height: 400px; border: 1px solid;">
+                  <thead class="text-danger">
+                    <tr>
+                      <th>Product ID</th>
+                      <th>Name</th>
+                      <th>Image</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of products">
+                      <td>{{product.productId}}</td>
+                      <td>{{product.name}} {{product.packSize}}</td>
+                      <td>
+                        <img class="product-image" src="{{product.image}}" alt="{{product.name}} {{product.packSize}}" style="height:85px">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -34,3 +53,4 @@
       </div>
     </div>
   </div>
+</div>

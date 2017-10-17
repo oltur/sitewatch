@@ -15,7 +15,6 @@ export class ABTestsListComponent implements OnInit {
   ) { }
 
   public data: any[];
-
   public initComplete:boolean = false;
 
   ngOnInit() {
@@ -25,6 +24,7 @@ export class ABTestsListComponent implements OnInit {
       this.data = data2;
       setTimeout(() => {
         $(".for-datatables").DataTable({
+          "destroy": true,
           "initComplete": function(settings, json) {
             self.initComplete = true;
           }
